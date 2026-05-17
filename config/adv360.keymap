@@ -3,8 +3,8 @@
 #include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/rgb.h>
 
 / {
     behaviors {
@@ -126,11 +126,11 @@
 
         mouse {
             bindings = <
-&none           &kp ESCAPE    &kp INSERT    &kp LS(TAB)   &kp DEL         &none        &trans                                               &trans        &none        &none         &none           &none      &none        &none
-&kp ESCAPE      &kp ENTER     &kp SPACE     &kp TAB       &kp BACKSPACE   &kp K_CUT    &trans                                               &trans        &kp RS(TAB)  &kp K_UNDO    &kp K_REDO      &kp TAB    &kp K_CUT    &none
-&sk LEFT_SHIFT  &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL     &kp LEFT_SHIFT  &kp K_COPY   &trans  &none  &none      &none        &none         &trans        &kp LEFT     &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT  &kp K_COPY   &sk RIGHT_SHIFT
-&none           &select_all   &select_line  &select_word  &kp K_FIND      &kp K_PASTE                 &none      &none                                    &kp HOME     &kp PAGE_UP   &kp PAGE_DOWN   &kp END    &kp K_PASTE  &none
-&none           &kp K_UNDO    &kp K_REDO    &none         &none                        &trans  &none  &none      &select_all  &select_line  &select_word               &kp K_FIND    &none           &none      &none        &none
+&none           &none           &none           &none           &none            &none           &none                                                                    &trans        &none        &none         &none           &none      &none        &none
+&none           &none           &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &kp K_CUT       &none                                                                    &trans        &kp RS(TAB)  &kp K_UNDO    &kp K_REDO      &kp TAB    &kp K_CUT    &none
+&sk LEFT_SHIFT  &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP    &none      &none      &none                   &none        &none         &trans        &kp LEFT     &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT  &kp K_COPY   &sk RIGHT_SHIFT
+&none           &msc SCRL_DOWN  &select_line    &select_word    &kp K_FIND       &msc SCRL_DOWN                        &none                   &none                                    &kp HOME     &kp PAGE_UP   &kp PAGE_DOWN   &kp END    &kp K_PASTE  &none
+&none           &none           &kp K_CUT       &kp K_COPY      &kp K_PASTE                      &mkp LCLK  &mkp RCLK  &kp K_CONTEXT_MENU      &select_all  &select_line  &select_word               &kp K_FIND    &none           &none      &none        &none
             >;
         };
     };
