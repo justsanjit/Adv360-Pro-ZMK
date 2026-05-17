@@ -42,7 +42,7 @@
         select_word: select_word {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RC(LEFT) &kp RC(RS(RIGHT))>;
+            bindings = <&kp RA(LEFT) &kp RA(RS(RIGHT))>;
             label = "SELECT_WORD";
         };
     };
