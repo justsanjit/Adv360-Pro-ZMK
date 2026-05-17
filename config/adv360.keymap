@@ -23,6 +23,29 @@
         };
     };
 
+    macros {
+        select_line: select_line {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HOME &kp RS(END)>;
+            label = "SELECT_LINE";
+        };
+
+        select_all: select_all {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RG(A)>;
+            label = "SELECT_ALL";
+        };
+
+        select_word: select_word {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RC(LEFT) &kp RC(RS(RIGHT))>;
+            label = "SELECT_WORD";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -82,11 +105,11 @@
 
         cursor {
             bindings = <
-&trans          &trans        &trans        &trans     &trans          &trans       &trans                                      &trans  &trans       &trans        &trans          &trans     &trans       &trans
-&trans          &kp ENTER     &kp SPACE     &kp TAB    &kp BACKSPACE   &kp K_CUT    &trans                                      &trans  &kp RS(TAB)  &kp K_UNDO    &kp K_REDO      &kp TAB    &kp K_CUT    &trans
-&sk LEFT_SHIFT  &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &kp K_COPY   &trans  &trans  &trans      &trans  &trans  &trans  &kp LEFT     &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT  &kp K_COPY   &trans
-&trans          &trans        &trans        &trans     &trans          &kp K_PASTE                  &trans      &trans                  &kp HOME     &kp PAGE_UP   &kp PAGE_DOWN   &kp END    &kp K_PASTE  &trans
-&trans          &trans        &trans        &trans     &trans                       &trans  &trans  &trans      &trans  &trans  &trans               &kp K_FIND    &trans          &trans     &trans       &trans
+&trans          &trans        &trans        &trans        &trans          &trans       &trans                                                 &trans        &trans       &trans        &trans          &trans     &trans       &trans
+&trans          &kp ENTER     &kp SPACE     &kp TAB       &kp BACKSPACE   &kp K_CUT    &trans                                                 &trans        &kp RS(TAB)  &kp K_UNDO    &kp K_REDO      &kp TAB    &kp K_CUT    &trans
+&sk LEFT_SHIFT  &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL     &kp LEFT_SHIFT  &kp K_COPY   &trans  &trans  &trans      &trans       &trans        &trans        &kp LEFT     &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT  &kp K_COPY   &trans
+&trans          &select_all   &select_line  &select_word  &kp K_FIND      &kp K_PASTE                  &trans      &trans                                   &kp HOME     &kp PAGE_UP   &kp PAGE_DOWN   &kp END    &kp K_PASTE  &trans
+&trans          &kp K_UNDO    &kp K_REDO    &trans        &trans                       &trans  &trans  &trans      &select_all  &select_line  &select_word               &kp K_FIND    &trans          &trans     &trans       &trans
             >;
         };
     };
